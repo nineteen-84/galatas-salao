@@ -1,12 +1,22 @@
+export interface RegisterUsersUseCaseRequest {
+  email: string;
+  name: string;
+  passwordHash: string;
+}
 
-interface User {
+export interface RegisterUsersUseCaseResponse {
+  id: string;
+  email: string;
+  name: string;
+}
+
+interface UserRepositoryRequest {
+  id: string;
   name: string;
   email: string;
-  password: string;
-
 }
 
 export interface UsersRepository {
-  create(data: User): Promise<User>
-  findByEmail(email: string): Promise<User | null>
+  create(data: RegisterUsersUseCaseRequest): Promise<RegisterUsersUseCaseResponse>
+  findByEmail(email: string): Promise<UserRepositoryRequest | null>
 }
