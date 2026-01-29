@@ -1,7 +1,10 @@
+import './globals.css';
+import { router } from "./routes";
+
+import { RouterProvider } from "react-router";
+
 export function App() {
   return (
-    <div>
-      <h1>Galatas: Salão Masculino</h1>
-    </div>
+    <RouterProvider router={router} />
   )
 }
