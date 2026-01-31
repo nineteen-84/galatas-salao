@@ -4,7 +4,7 @@ import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { TableCell } from "@/components/ui/table";
-import { Link, useNavigate } from "react-router";
+import { Link, useNavigate, useSearchParams } from "react-router";
 import { useForm } from "react-hook-form";
 import { SignInModal } from "./sign-in-modal";
 import { z } from "zod";
@@ -18,8 +18,13 @@ const signInForm = z.object({
 type SignInForm = z.infer<typeof signInForm>
 
 export function SignIn() {
+  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const { register, handleSubmit, formState: { isSubmitting } } = useForm<SignInForm>();
+  const { register, handleSubmit, formState: { isSubmitting } } = useForm<SignInForm>({
+    defaultValues: {
+      email: searchParams.get('email') ?? "",
+    }
+  });
 
   async function handleSignIn(data: SignInForm) {
     try {
