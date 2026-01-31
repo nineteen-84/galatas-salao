@@ -1,14 +1,15 @@
-import { Outlet } from "react-router";
 import { Landmark } from "lucide-react";
+import { Outlet } from "react-router";
+
 import imgHairBackground from "@/assets/auth/fundo-corte-cabelo.jpg"
 
 export function AuthLayout() {
   return (
     <div className="overflow-hidden grid min-h-screen grid-cols-2 antialiased">
       <div className=" relative border-foreground/5 flex h-full flex-col justify-between border-r p-10">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-100" 
-          style={{ backgroundImage: `url(${imgHairBackground})` }} 
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-100"
+          style={{ backgroundImage: `url(${imgHairBackground})` }}
         />
 
         <div className="relative z-10 flex flex-col justify-between h-full">

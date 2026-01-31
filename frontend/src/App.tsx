@@ -1,9 +1,10 @@
-import { Toaster } from 'sonner';
 import './globals.css';
-import { router } from "./routes";
 
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { RouterProvider } from "react-router";
+import { Toaster } from 'sonner';
+
+import { router } from "./routes";
 
 export function App() {
   return (

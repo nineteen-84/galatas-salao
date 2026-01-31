@@ -1,15 +1,19 @@
+import { Helmet } from "react-helmet-async";
+import { useForm } from "react-hook-form";
+import { Link, useNavigate, useSearchParams } from "react-router";
+import { toast } from "sonner";
+import { z } from "zod";
+
 import logo from "@/assets/auth/logo.png";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { TableCell } from "@/components/ui/table";
-import { Link, useNavigate, useSearchParams } from "react-router";
-import { useForm } from "react-hook-form";
-import { SignInModal } from "./sign-in-modal";
-import { z } from "zod";
-import { toast } from "sonner";
 
+import { SignInModal } from "./sign-in-modal";
+
+// eslint-disable-next-line
 const signInForm = z.object({
   email: z.email().min(1),
   password: z.string(),
@@ -42,6 +46,7 @@ export function SignIn() {
   return (
     <>
       <Dialog>
+        <Helmet title="Login" />
         <div className="p-8">
           <div className="flex flex-col gap-2 text-center items-center">
             <img src={logo} className="h-65 w-65" />
@@ -83,7 +88,7 @@ export function SignIn() {
                   </Button>
                 </DialogTrigger>
 
-                
+
               </TableCell>
 
               <Label className="text-muted flex flex-row gap-2 mt-12">Não possui uma conta?

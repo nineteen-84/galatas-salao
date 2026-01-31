@@ -1,12 +1,15 @@
-import logo from "@/assets/auth/logo.png";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router";
 import { toast } from "sonner";
 import z from "zod";
 
+import logo from "@/assets/auth/logo.png";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
+// eslint-disable-next-line
 const signUpForm = z.object({
   name: z.string(),
   email: z.email(),
@@ -35,6 +38,7 @@ export function SignUp() {
   return (
     <>
       <div className="p-8">
+        <Helmet title="Register" />
         <div className="flex flex-col gap-2 text-center items-center">
           <img src={logo} className="h-65 w-65" />
         </div>
