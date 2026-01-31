@@ -47,6 +47,18 @@ export function SignUp() {
               <Link to="/sign-in">Registrar</Link>
             </Button>
 
+            <p className="text-accent px-6 text-center text-sm leading-relaxed w-82">
+              Ao continuar, você concorda com nossos{' '}
+              <a className="underline underline-offset-4" href="">
+                termos de serviço
+              </a>{' '}
+              e{' '}
+              <a href="" className="underline underline-offset-4">
+                políticas de privacidade
+              </a>
+              .
+            </p>
+
             <Label className="text-muted flex flex-row gap-2 mt-12">Já possuí uma conta?
               <Link to="/sign-in" className="underline underline-offset-8 hover:text-[#E2C064]">Entrar</Link>
             </Label>
