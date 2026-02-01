@@ -4,10 +4,10 @@ import { Header } from "../../components/header";
 
 export function AppLayout() {
   return (
-    <div>
+    <div className="flex flex-col overflow-hidden min-h-screen antialiased">
       <Header />
 
-      <div>
+      <div className="bg-[#2B2D54] flex-1">
         <Outlet />
       </div>
     </div>
