@@ -14,17 +14,17 @@ export function AuthLayout() {
 
         <div className="relative z-10 flex flex-col justify-between h-full">
           <div className="text-ls text-foreground flex items-center gap-3 font-medium">
-            <Landmark className="h-5 w-5 text-accent" />
-            <span className="font-semibold text-accent">Galatas</span>
+            <Landmark className="h-5 w-5 text-accent-foreground" />
+            <span className="font-semibold text-accent-foreground">Galatas</span>
           </div>
 
-          <footer className="text-sm text-accent">
+          <footer className="text-sm text-accent-foreground">
             Painel de Acesso &copy; Galatas - {new Date().getFullYear()}
           </footer>
         </div>
       </div>
 
-      <div className="relative flex flex-col items-center justify-center bg-[#2B2D54]">
+      <div className="relative flex flex-col items-center justify-center bg-background">
         <Outlet />
       </div>
     </div>

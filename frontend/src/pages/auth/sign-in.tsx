@@ -57,7 +57,7 @@ export function SignIn() {
               <div className="flex gap-2 flex-col">
                 <Label htmlFor="email" className="text-muted pl-2">Email:</Label>
                 <Input
-                  className="border-[#E2C064] border-t-0 border-r-0 border-l-0 text-accent"
+                  className="border-[#E2C064] border-t-0 border-r-0 border-l-0 text-accent-foreground"
                   id="email"
                   type="email"
                   {...register('email')}
@@ -67,7 +67,7 @@ export function SignIn() {
               <div className="flex gap-2 flex-col">
                 <Label htmlFor="password" className="text-muted pl-2">Senha:</Label>
                 <Input
-                  className="border-[#E2C064] border-t-0 border-r-0 border-l-0 text-accent"
+                  className="border-[#E2C064] border-t-0 border-r-0 border-l-0 text-accent-foreground"
                   id="password"
                   type="password"
                   {...register('password')}
@@ -82,9 +82,8 @@ export function SignIn() {
 
               <TableCell>
                 <DialogTrigger asChild>
-                  <Button variant="link" size="sm">
-                    <span className="text-[#E2C064] underline underline-offset-8 hover:text-accent cursor-pointer">
-                      Esqueceu a senha?</span>
+                  <Button variant="link" size="sm" className="text-accent-foreground hover:text-muted-foreground underline underline-offset-8  cursor-pointer">
+                    Esqueceu a senha?
                   </Button>
                 </DialogTrigger>
 
