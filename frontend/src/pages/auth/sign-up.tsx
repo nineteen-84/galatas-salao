@@ -37,11 +37,12 @@ export function SignUp() {
 
   return (
     <>
+      <Helmet title="Register" />
       <div className="p-8">
-        <Helmet title="Register" />
-        <div className="flex flex-col gap-2 text-center items-center">
-          <img src={logo} className="h-65 w-65" />
+        <div>
+          <img src={logo} alt="Logo da marca com um 'G' grande em destaque, embaixo escrito 'GÁLATAS RZ'S', e novamente embaixo, o nome BARBEARIA" />
         </div>
+
         <form className="flex flex-col gap-12" onSubmit={handleSubmit(handleSignUp)}>
 
           <div className="space-y-4">
@@ -65,8 +66,8 @@ export function SignUp() {
               />
             </div>
 
-            <div className="grid grid-cols-4 gap-8">
-              <div className="flex gap-2 flex-col col-span-2">
+            <div className="grid grid-cols-2 gap-8">
+              <div className="flex gap-2 flex-col col-span-1">
                 <Label htmlFor="tel" className="text-muted pl-2">Telefone:</Label>
                 <Input
                   className="border-[#E2C064]  border-t-0 border-r-0 border-l-0 text-accent-foreground"
@@ -76,7 +77,7 @@ export function SignUp() {
                 />
               </div>
 
-              <div className="flex gap-2 flex-col col-span-2">
+              <div className="flex gap-2 flex-col col-span-1">
                 <Label htmlFor="CPF" className="text-muted pl-2">CPF:</Label>
                 <Input
                   className="border-[#E2C064] border-t-0 border-r-0 border-l-0 text-accent-foreground"

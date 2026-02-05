@@ -43,44 +43,84 @@
 
 :root {
   --radius: 0.625rem;
+
+  /* Cor da página */
   --background: #2B2D54;
-  --foreground: #2B2D54;
-  --card: #ffffff;
-  --card-foreground: #2B2D54;
-  --popover: #ffffff;
-  --popover-foreground: #2B2D54;
+
+  /* Cor do texto */
+  --foreground: #ffff;
+
+  /* Cor de destaque (modo claro: azul escuro) */
   --primary: #2B2D54;
   --primary-foreground: #ffffff;
+
+  /* Cor de fundo de painéis/caixas */
+  --card: #ffffff;
+  --card-foreground: #2B2D54;
+
+  /* Cor de fundo de balões/menus */
+  --popover: #ffffff;
+  --popover-foreground: #2B2D54;
+
+  /* Cor de apoio para elementos que precisam ser menos chamativo */
   --secondary: #f4f4f5;
   --secondary-foreground: #2B2D54;
+
+  /* Cor para elementos que devem simbolizar estar desativado */
   --muted: #f4f4f5;
   --muted-foreground: #71717a;
+
+  /* Cor para elementos que precisam de destaque (hover) */
   --accent: #f4f4f5;
   --accent-foreground: #f4f4f5;
+
+  /* Cor para elementos com alerta/erro (botões de excluir) */
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #e4e4e7;
-  --input: #2B2D54;
-  --ring: #2B2D54;
 
+  /* Cor das linhas que dividem seções/contornam elementos */
+  --border: #E2C064;
+
+  /* Cor das bordas das caixas */
+  --input: #d51a1a;
+
+  /* Cor da linha de foco, ao redor do elemento (botão - quando clica nele) */
+  --ring: #E2C064;
+
+  /* Cor para gráficos */
   --chart-1: #2B2D54;
   --chart-2: #E2C064;
   --chart-3: #2a9d8f;
   --chart-4: #e9c46a;
   --chart-5: #f4a261;
 
+  /* Cor de fundo exclusiva da barra lateral */
   --sidebar: #f8fafc;
+
+  /* Cor de texto padrão na barra lateral */
   --sidebar-foreground: #2B2D54;
+
+  /* Cor de destaque para item selecionado no menu */
   --sidebar-primary: #2B2D54;
+
+  /* Cor do texto sobre esse destaque */
   --sidebar-primary-foreground: #ffffff;
+
+  /* Cor de fundo quando você passa o mouse sobre um item do menu */
   --sidebar-accent: #f1f5f9;
+
+  /* Cor do texto durante o efeito do mouse */
   --sidebar-accent-foreground: #2B2D54;
+
+  /* Cor da linha que separa a barra lateral do resto do conteúdo */
   --sidebar-border: #e2e8f0;
+
+  /* Cor de foco (acessibilidade) nos elementos da barra */
   --sidebar-ring: #2B2D54;
 }
 
 .dark {
-  --background: #2B2D54;
+  --background: #020202;
   --foreground: #ffffff;
   --card: #32345e;
   --card-foreground: #ffffff;

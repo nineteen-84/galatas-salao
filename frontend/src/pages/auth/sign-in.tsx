@@ -47,17 +47,21 @@ export function SignIn() {
     <>
       <Dialog>
         <Helmet title="Login" />
-        <div className="p-8">
-          <div className="flex flex-col gap-2 text-center items-center">
-            <img src={logo} className="h-65 w-65" />
-          </div>
-          <form className="flex flex-col gap-12" onSubmit={handleSubmit(handleSignIn)}>
 
+        <div className="p-8 flex flex-col gap-8">
+          <div>
+            <img
+              src={logo}
+              alt="Logo da marca com um 'G' grande em destaque, embaixo escrito 'GÁLATAS RZ'S', e novamente embaixo, o nome BARBEARIA"
+            />
+          </div>
+
+          <form className="flex flex-col gap-12" onSubmit={handleSubmit(handleSignIn)}>
             <div className="space-y-4">
               <div className="flex gap-2 flex-col">
                 <Label htmlFor="email" className="text-muted pl-2">Email:</Label>
                 <Input
-                  className="border-[#E2C064] border-t-0 border-r-0 border-l-0 text-accent-foreground"
+                  className="border-border border-t-0 border-r-0 border-l-0 text-accent"
                   id="email"
                   type="email"
                   {...register('email')}
@@ -67,7 +71,7 @@ export function SignIn() {
               <div className="flex gap-2 flex-col">
                 <Label htmlFor="password" className="text-muted pl-2">Senha:</Label>
                 <Input
-                  className="border-[#E2C064] border-t-0 border-r-0 border-l-0 text-accent-foreground"
+                  className="border-border border-t-0 border-r-0 border-l-0 text-accent"
                   id="password"
                   type="password"
                   {...register('password')}
