@@ -13,6 +13,7 @@ export interface RegisterUsersUseCaseResponse {
 interface UserRepositoryRequest {
   id: string;
   name: string;
+  passwordHash: string;
   email: string;
 }
 

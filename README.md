@@ -10,8 +10,8 @@
 - - O que deve fazer
 
 ### Autenticação e Usuários
-- [] Deve ser possível se cadastrar;
-- [] Deve ser possível se autenticar;
+- [x] Deve ser possível se cadastrar;
+- [x] Deve ser possível se autenticar;
 - [] Deve ser possível trocar a senha (recuperação de conta);
 - [] Deve ser possível excluir a própria conta;
 - [] Deve ser possível obter o perfil de um usuário logado;
