@@ -10,7 +10,7 @@ export interface RegisterUsersUseCaseResponse {
   name: string;
 }
 
-interface UserRepositoryRequest {
+export interface UserRepositoryRequest {
   id: string;
   name: string;
   passwordHash: string;
@@ -20,4 +20,5 @@ interface UserRepositoryRequest {
 export interface UsersRepository {
   create(data: RegisterUsersUseCaseRequest): Promise<RegisterUsersUseCaseResponse>
   findByEmail(email: string): Promise<UserRepositoryRequest | null>
+  searchMany(): Promise<UserRepositoryRequest | null>
 }

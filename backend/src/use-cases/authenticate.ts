@@ -3,7 +3,6 @@ import { compare } from "bcryptjs";
 
 export interface AuthenticateUsersUseCaseRequest {
   email: string;
-  name: string;
   password: string;
 };
 

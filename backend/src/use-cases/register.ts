@@ -1,8 +1,9 @@
 import { UsersRepository } from "@/repositories/users-repository";
 import { hash } from "bcryptjs";
 import { randomInt } from "crypto";
+import { UsersWithSameEmail } from "./errors/users-with-same-error";
 
-export interface RegisterUsersUseCaseRequest {
+export interface RegisterUseCaseRequest {
   email: string;
   name: string;
   password: string;
@@ -14,11 +15,11 @@ type User = {
   email: string;
 };
 
-interface RegisterUsersUseCaseResponse {
+interface RegisterUseCaseResponse {
   user: User;
 };
 
-export class RegisterUsersUseCase {
+export class RegisterUseCase {
   constructor(private usersRepository: UsersRepository) {
     this.usersRepository = usersRepository;
   }
@@ -27,11 +28,11 @@ export class RegisterUsersUseCase {
     email,
     name,
     password
-  }: RegisterUsersUseCaseRequest): Promise<RegisterUsersUseCaseResponse> {
+  }: RegisterUseCaseRequest): Promise<RegisterUseCaseResponse> {
     const userWithSameEmail = await this.usersRepository.findByEmail(email);
 
     if (userWithSameEmail) {
-      throw new Error("Email already exists.");
+      throw new UsersWithSameEmail();
     };
 
     const randomSalt = randomInt(6, 10);
@@ -45,8 +46,8 @@ export class RegisterUsersUseCase {
       }
     );
 
-    return { 
-      user 
-    };
+      return { 
+        user 
+      };
   }
 }

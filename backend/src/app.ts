@@ -1,11 +1,11 @@
 import fastify from "fastify";
 import { env } from "@/env/index"
 import * as z from "zod";
-import { registerUserController } from "./http/controllers/register-user";
+import { register } from "./http/controllers/register-user";
 
 export const app = fastify();
 
-app.post("/users", registerUserController);
+app.post("/users", register);
 
 app.setErrorHandler((error, _request, reply) => {
   if (error instanceof z.ZodError) {
