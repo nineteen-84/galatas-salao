@@ -10,15 +10,23 @@ export interface RegisterUsersUseCaseResponse {
   name: string;
 }
 
-export interface UserRepositoryRequest {
+export interface UserRepositoryResponse {
   id: string;
   name: string;
   passwordHash: string;
   email: string;
 }
 
+interface UpdatedPasswordUserRequest {
+  id: string;
+  password: string;
+}
+
 export interface UsersRepository {
   create(data: RegisterUsersUseCaseRequest): Promise<RegisterUsersUseCaseResponse>
-  findByEmail(email: string): Promise<UserRepositoryRequest | null>
-  searchMany(): Promise<UserRepositoryRequest | null>
+  findByEmail(email: string): Promise<UserRepositoryResponse | null>
+  findById(id: string): Promise<UserRepositoryResponse>
+  searchMany(): Promise<UserRepositoryResponse | null>
+  updatedPassword(id: string): Promise<null>; 
+  deleteAccount(id: string): Promise<null>;
 }

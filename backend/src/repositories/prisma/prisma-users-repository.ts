@@ -1,20 +1,31 @@
 import { 
   RegisterUsersUseCaseRequest, 
   RegisterUsersUseCaseResponse, 
-  UserRepositoryRequest,
+  UserRepositoryResponse,
   UsersRepository }
 from "../users-repository";
 
 export class PrismaUsersRepository implements UsersRepository {
+  deleteAccount(id: string): Promise<null> {
+    throw new Error("Method not implemented.");
+  }
   create(data: RegisterUsersUseCaseRequest): Promise<RegisterUsersUseCaseResponse> {
     throw new Error("Method not implemented.");
   }
-
-  findByEmail(email: string): Promise<UserRepositoryRequest | null> {
+  
+  findById(id: string): Promise<UserRepositoryResponse> {
     throw new Error("Method not implemented.");
   }
-
-  searchMany(): Promise<UserRepositoryRequest | null> {
+  
+  findByEmail(email: string): Promise<UserRepositoryResponse | null> {
+    throw new Error("Method not implemented.");
+  }
+  
+  searchMany(): Promise<UserRepositoryResponse | null> {
+    throw new Error("Method not implemented.");
+  }
+  
+  updatedPassword(): Promise<null> {
     throw new Error("Method not implemented.");
   }
 
