@@ -1,8 +1,8 @@
 import { UsersRepository } from "@/repositories/users-repository";
 import { compare } from "bcryptjs";
-import { MakeUserInvalidCreadentials } from "./errors/make-user-invalid-creadentials-error";
+import { InvalidCredentialsError } from "./errors/invalid-credentials-error";
 
-export interface AuthenticateUsersUseCaseRequest {
+export interface AuthenticateUseCaseRequest {
   email: string;
   password: string;
 };
@@ -13,11 +13,11 @@ type User = {
   email: string;
 };
 
-interface AuthenticateUsersUseCaseResponse {
+interface AuthenticateUseCaseResponse {
   user: User;
 };
 
-export class AuthenticateUsersUseCase {
+export class AuthenticateUseCase {
   constructor(private usersRepository: UsersRepository) {
     this.usersRepository = usersRepository;
   }
@@ -25,17 +25,17 @@ export class AuthenticateUsersUseCase {
   async execute({
     email,
     password
-  }: AuthenticateUsersUseCaseRequest): Promise<AuthenticateUsersUseCaseResponse> {
+  }: AuthenticateUseCaseRequest): Promise<AuthenticateUseCaseResponse> {
     const user = await this.usersRepository.findByEmail(email);
 
     if (!user) {
-      throw new MakeUserInvalidCreadentials();
+      throw new InvalidCredentialsError();
     };
 
     const isPasswordValid = await compare(password, user.passwordHash);
 
     if (!isPasswordValid) {
-      throw new MakeUserInvalidCreadentials();
+      throw new InvalidCredentialsError();
     }
 
     return { 
