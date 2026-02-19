@@ -28,7 +28,7 @@ export class RegisterUseCase {
     email,
     name,
     password
-  }: RegisterUseCaseRequest): Promise<RegisterUseCaseResponse> {
+  }: RegisterUseCaseRequest) {
     const userWithSameEmail = await this.usersRepository.findByEmail(email);
 
     if (userWithSameEmail) {
@@ -38,14 +38,11 @@ export class RegisterUseCase {
     const randomSalt = randomInt(6, 10);
     const passwordHash = await hash(password, randomSalt);
 
-    const user = await this.usersRepository.create({
+    await this.usersRepository.create({
       email,
       name,
       passwordHash
     });
 
-    return {
-      user
-    };
   }
 }

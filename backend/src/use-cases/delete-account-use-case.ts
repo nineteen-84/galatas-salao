@@ -1,4 +1,5 @@
 import { UsersRepository } from "@/repositories/users-repository";
+import { UserNotFound } from "./errors/user-not-found-error";
 
 interface DeleteAccountUseCaseRequest {
   id: string;
@@ -10,12 +11,12 @@ export class DeleteAccountUseCase {
   }
 
   async execute({ id }: DeleteAccountUseCaseRequest) {
-    const user = this.usersRepository.findById(id);
+    const user = await this.usersRepository.findById(id);
 
-    if (user) {
-      await this.usersRepository.deleteAccount((await user).id);
-    }
+    if (!user) {
+      throw new UserNotFound();
+    };
 
-    return null;
+    await this.usersRepository.deleteAccount(user.id);
   }
 }

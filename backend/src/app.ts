@@ -7,4 +7,3 @@ app.register(appRoutes, {
   prefix: 'app',
   logLevel: "info",
 });
-
